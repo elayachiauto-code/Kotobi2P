@@ -98,6 +98,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,
 .pr-ds{font-size:10px;color:var(--mt);margin-top:1px}
 .pr-price{font-size:22px;font-weight:900;color:var(--p);white-space:nowrap;font-family:'Tajawal',sans-serif}
 .pr-dzd{font-size:10px;color:var(--mt)}
+.pay-toggle{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px}
+.pay-opt{display:flex;align-items:center;gap:8px;border:2px solid var(--bd);border-radius:12px;padding:10px;background:var(--bg);cursor:pointer;font-family:'Tajawal',sans-serif;text-align:right;transition:.2s}
+.pay-opt.active{border-color:var(--p);background:var(--pl)}
+.po-ico{font-size:20px}
+.po-t{font-size:11.5px;font-weight:800;color:var(--dk2)}
+.po-d{font-size:9.5px;color:var(--mt)}
+.baridi-box{background:linear-gradient(135deg,rgba(255,217,61,.15),rgba(255,107,157,.08));border:2px solid rgba(255,193,7,.45);border-radius:12px;padding:14px;margin-bottom:14px}
+.bb-row{font-size:12px;font-weight:800;color:var(--dk2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.bb-rip{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px dashed var(--p);border-radius:10px;padding:9px 12px;margin-bottom:6px;font-weight:900;font-size:14px;letter-spacing:1px;direction:ltr}
+.bb-rip button{background:var(--p);color:#fff;border:none;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:800;cursor:pointer;font-family:'Tajawal',sans-serif;flex-shrink:0;margin-right:8px}
+.bb-name{font-size:11px;color:var(--mt);margin-bottom:8px}
+.bb-steps{font-size:11.5px;color:var(--dk2);line-height:2}
+.bb-steps b{color:var(--p)}
+.card-box{background:linear-gradient(135deg,rgba(0,112,186,.1),rgba(0,48,135,.06));border:2px solid rgba(0,112,186,.35);border-radius:12px;padding:14px;margin-bottom:14px}
+.cb-row{font-size:12px;font-weight:800;color:var(--dk2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.cb-price{font-size:22px;font-weight:900;color:#0070BA;text-align:center;margin-bottom:8px}
+.cb-pay-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#0070BA,#003087);color:#fff;border:none;padding:12px;border-radius:100px;font-size:13px;font-weight:900;font-family:'Tajawal',sans-serif;cursor:pointer;text-decoration:none;margin-bottom:10px}
+.cb-steps{font-size:11.5px;color:var(--dk2);line-height:2}
+.cb-steps b{color:#0070BA}
 .fg{margin-bottom:12px}
 .fl{display:block;font-size:10px;font-weight:700;color:var(--mt);margin-bottom:5px;letter-spacing:.4px;text-transform:uppercase}
 .fi{width:100%;background:var(--bg);border:2px solid var(--bd);border-radius:9px;padding:10px 13px;font-size:13px;font-family:'Tajawal',sans-serif;color:var(--dk2);outline:none;transition:border-color .2s}
@@ -148,7 +167,7 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
 <nav>
   <a class="logo" href="#">
     <div class="logo-i">📚</div>
-    <div class="logo-t">كتبي المدرسية<small>السنة الثانية ابتدائي</small></div>
+    <div class="logo-t">AYachi Info<small>كتبي المدرسية - السنة الثانية ابتدائي</small></div>
   </a>
   <div class="nbts">
     <a href="https://wa.me/213774770878" class="nb nb-w" target="_blank">💬 واتساب</a>
@@ -157,7 +176,7 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
 </nav>
 
 <section class="hero">
-  <div class="hbadge"><div class="bdot"></div>تطبيق تعليمي جزائري · فلاش ديسك USB</div>
+  <div class="hbadge"><div class="bdot"></div>تطبيق تعليمي جزائري</div>
   <h1>كل <span class="gh">كتبك المدرسية</span><br><span class="gh2">في تطبيق واحد</span> ممتع!</h1>
   <p>تطبيق شامل لجميع مواد السنة الثانية ابتدائي: عربية، إسلامية، مدنية ورياضيات · يعمل بدون إنترنت</p>
   <div class="chips">
@@ -165,6 +184,7 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
     <div class="chip">📵 بدون إنترنت</div>
     <div class="chip">🚚 كل الولايات</div>
     <div class="chip">💵 دفع عند الاستلام</div>
+    <div class="chip">📲 بريدي موب · 💳 Visa/Master</div>
   </div>
   <div class="hbtns">
     <a href="#order" class="btn-m">🛒 اطلب الآن — 1500 دج</a>
@@ -179,6 +199,8 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
   <div class="pbar-b">✅ دفع عند الاستلام</div>
   <span style="color:rgba(255,255,255,.25)">·</span>
   <div class="pbar-n">+ مصاريف التوصيل حسب الولاية</div>
+  <span style="color:rgba(255,255,255,.25)">·</span>
+  <div class="pbar-n">📲 أو بريدي موب · 💳 Visa/Master (تحميل فوري)</div>
 </div>
 
 <div class="band">
@@ -260,8 +282,45 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
           </div>
         </div>
         <div style="text-align:left">
-          <div class="pr-price">1500</div>
-          <div class="pr-dzd">دج</div>
+          <div class="pr-price" id="pr-price">1500</div>
+          <div class="pr-dzd" id="pr-dzd">دج</div>
+        </div>
+      </div>
+      <div class="pay-toggle">
+        <button type="button" class="pay-opt active" id="pay-cod" onclick="setPayMode('cod')">
+          <span class="po-ico">🚚</span>
+          <div><div class="po-t">توصيل لمنزلك</div><div class="po-d">دفع عند الاستلام</div></div>
+        </button>
+        <button type="button" class="pay-opt" id="pay-baridi" onclick="setPayMode('baridi')">
+          <span class="po-ico">📲</span>
+          <div><div class="po-t">بريدي موب</div><div class="po-d">تحميل مباشر فوري</div></div>
+        </button>
+        <button type="button" class="pay-opt" id="pay-card" onclick="setPayMode('card')">
+          <span class="po-ico">💳</span>
+          <div><div class="po-t">Visa/Master</div><div class="po-d">8$ تحميل مباشر</div></div>
+        </button>
+      </div>
+      <div class="baridi-box" id="baridi-fields" style="display:none">
+        <div class="bb-row">💳 حوّل عبر بريدي موب (CCP) إلى الحساب التالي</div>
+        <div class="bb-rip"><span id="rip-num">00799999001473250756</span><button onclick="copyRIP()">📋 نسخ</button></div>
+        <div class="bb-name">باسم: سعيد آيات شي</div>
+        <div class="bb-steps">
+          1. حوّل مبلغ <b>1500 دج</b> إلى الحساب أعلاه عبر تطبيق بريدي موب.<br>
+          2. صوّر إشعار التحويل (Capture).<br>
+          3. اضغط الزر بالأسفل وأرسل الصورة عبر واتساب مع اسمك، وسنرسل لك <b>رابط تحميل التطبيق فوراً</b> 📥
+        </div>
+      </div>
+      <div class="card-box" id="card-fields" style="display:none">
+        <div class="cb-row">💳 الدفع ببطاقة Visa / Mastercard عبر PayPal</div>
+        <div class="cb-price">8 $</div>
+        <a class="cb-pay-btn" href="https://www.paypal.com/qrcodes/managed/6f0537c6-dc62-4368-8e22-ca9b0bfdc9ee?utm_source=consapp_onscreen" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.4 21.5h-3l2.6-15.8h6.7c3.4 0 5.6 1.9 5 5.1-.7 3.7-3.6 5.6-7.3 5.6h-2.4l-1.6 5.1zM10.6 13h1.7c2 0 3.3-1 3.6-2.6.3-1.6-.6-2.5-2.5-2.5h-1.6L10.6 13z"/></svg>
+          الدفع عبر PayPal — 8$
+        </a>
+        <div class="cb-steps">
+          1. اضغط الزر أعلاه وأكمل الدفع بمبلغ <b>8$</b> عبر PayPal (يدعم فيزا وماستركارد).<br>
+          2. صوّر إشعار/تأكيد الدفع.<br>
+          3. اضغط الزر بالأسفل وأرسل الصورة عبر واتساب مع اسمك، وسنرسل لك <b>رابط تحميل التطبيق فوراً</b> 📥
         </div>
       </div>
       <div class="frow">
@@ -269,6 +328,7 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
         <div class="fg"><label class="fl">اللقب</label><input class="fi" id="f-prenom" type="text" placeholder="اللقب"></div>
       </div>
       <div class="fg"><label class="fl">رقم الهاتف</label><input class="fi" id="f-phone" type="tel" placeholder="0X XX XX XX XX"></div>
+      <div id="delivery-fields">
       <div class="fg">
         <label class="fl">الولاية</label>
         <select class="fi" id="f-wilaya" onchange="calcDel()">
@@ -314,11 +374,12 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
         <div class="tot-lbl">💰 المجموع الكلي</div>
         <div class="tot-val"><span id="tot-val"></span><span class="tot-dzd">دج</span></div>
       </div>
-      <button class="sub-btn" onclick="sendOrder()">
+      </div>
+      <button class="sub-btn" id="sub-btn" onclick="sendOrder()">
         <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.66 4.73 1.8 6.72L2 30l7.47-1.77A13.93 13.93 0 0016 30c7.73 0 14-6.27 14-14S23.73 2 16 2z"/></svg>
-        إرسال الطلب عبر واتساب
+        <span id="sub-btn-txt">إرسال الطلب عبر واتساب</span>
       </button>
-      <div class="fnote">الدفع عند الاستلام · بياناتك ترسل عبر واتساب فقط</div>
+      <div class="fnote" id="fnote-txt">الدفع عند الاستلام · بياناتك ترسل عبر واتساب فقط</div>
     </div>
   </div>
 </section>
@@ -331,7 +392,6 @@ footer{background:var(--dk);padding:20px;text-align:center;border-top:1px solid 
     <a href="https://wa.me/213774770878" target="_blank">واتساب</a>
   </div>
   <div class="ft-copy">© 2026 Said Ayachi · صُنع بـ ❤️ للأطفال الجزائريين</div>
-  <div style="margin-top:6px"><a href="#" onclick="openOrdersPanel();return false" style="color:rgba(255,255,255,.25);font-size:10px;text-decoration:none">📋 الطلبات</a></div>
 </footer>
 
 <script>
@@ -349,6 +409,40 @@ function calcDel(){
   document.getElementById('tot-val').textContent=(1500+d).toLocaleString('ar-DZ');
   db.style.display='block';tb.style.display='flex';nw.style.display='none';
 }
+let payMode='cod';
+function setPayMode(mode){
+  payMode=mode;
+  const cod=document.getElementById('pay-cod'),bar=document.getElementById('pay-baridi'),crd=document.getElementById('pay-card');
+  const df=document.getElementById('delivery-fields'),bf=document.getElementById('baridi-fields'),cf=document.getElementById('card-fields');
+  const btnTxt=document.getElementById('sub-btn-txt'),fn=document.getElementById('fnote-txt');
+  const pp=document.getElementById('pr-price'),pd=document.getElementById('pr-dzd');
+  cod.classList.remove('active');bar.classList.remove('active');crd.classList.remove('active');
+  df.style.display='none';bf.style.display='none';cf.style.display='none';
+  if(mode==='cod'){
+    cod.classList.add('active');
+    df.style.display='block';
+    btnTxt.textContent='إرسال الطلب عبر واتساب';
+    fn.textContent='الدفع عند الاستلام · بياناتك ترسل عبر واتساب فقط';
+    pp.textContent='1500';pd.textContent='دج';
+    calcDel();
+  }else if(mode==='baridi'){
+    bar.classList.add('active');
+    bf.style.display='block';
+    btnTxt.textContent='إرسال إشعار التحويل عبر واتساب';
+    fn.textContent='سنرسل لك رابط تحميل التطبيق فور تأكيد التحويل';
+    pp.textContent='1500';pd.textContent='دج';
+  }else{
+    crd.classList.add('active');
+    cf.style.display='block';
+    btnTxt.textContent='إرسال إشعار الدفع عبر واتساب';
+    fn.textContent='سنرسل لك رابط تحميل التطبيق فور تأكيد الدفع';
+    pp.textContent='8';pd.textContent='$';
+  }
+}
+function copyRIP(){
+  const rip=document.getElementById('rip-num').textContent.trim();
+  navigator.clipboard.writeText(rip).then(()=>alert('✅ تم نسخ رقم الحساب: '+rip));
+}
 function buildOrderData(){
   const n=document.getElementById('f-nom').value.trim();
   const p=document.getElementById('f-prenom').value.trim();
@@ -362,10 +456,28 @@ function buildOrderData(){
   return{n,p,ph,w,cm,ad,d,dy,total:1500+d};
 }
 function sendOrder(){
+  if(payMode==='baridi'||payMode==='card'){
+    const n=document.getElementById('f-nom').value.trim();
+    const p=document.getElementById('f-prenom').value.trim();
+    const ph=document.getElementById('f-phone').value.trim();
+    if(!n||!ph){alert('⚠️ يرجى تعبئة الاسم ورقم الهاتف');return;}
+    const isCard=payMode==='card';
+    const payLbl=isCard?'بطاقة Visa/Mastercard عبر PayPal':'بريدي موب (CCP)';
+    const amount=isCard?'8 $':'1500 دج';
+    const msg=`📚 *طلب تحميل مباشر — كتبي المدرسية س٢*\n`
+      +`────────────────\n`
+      +`👤 الاسم الكامل: ${n} ${p}\n`
+      +`📞 الهاتف: ${ph}\n`
+      +`💳 طريقة الدفع: ${payLbl}\n`
+      +`💰 المبلغ: ${amount}\n`
+      +`────────────────\n`
+      +`📎 سأرسل صورة إشعار/تأكيد الدفع الآن\n`
+      +`📥 يرجى إرسال رابط تحميل التطبيق بعد التأكد`;
+    window.open('https://wa.me/213774770878?text='+encodeURIComponent(msg),'_blank');
+    return;
+  }
   const o=buildOrderData();
   if(!o)return;
-  // حفظ الطلب محلياً ليظهر في لوحة الطلبات (للمتابعة وإدخاله في DHD لاحقاً)
-  saveOrderLocal(o);
   const msg=`📚 *طلب جديد — كتبي المدرسية س٢*\n`
     +`────────────────\n`
     +`👤 الاسم الكامل: ${o.n} ${o.p}\n`
@@ -379,36 +491,6 @@ function sendOrder(){
     +`💵 *المجموع: ${o.total.toLocaleString('ar-DZ')} دج*\n`
     +`✅ الدفع عند الاستلام`;
   window.open('https://wa.me/213774770878?text='+encodeURIComponent(msg),'_blank');
-}
-// ── حفظ الطلبات محلياً + لوحة طلبات مبسطة لتسهيل إدخالها يدوياً في DHD ──
-function saveOrderLocal(o){
-  try{
-    const list=JSON.parse(localStorage.getItem('orders')||'[]');
-    list.unshift({...o,date:new Date().toISOString()});
-    localStorage.setItem('orders',JSON.stringify(list));
-  }catch(e){}
-}
-function copyDHDFormat(o){
-  const txt=`${o.n} ${o.p}\n${o.ph}\n${o.w}\n${o.cm||''}\n${o.ad||''}\nكتبي المدرسية س٢ (1500 دج) + توصيل ${o.d} دج = ${o.total} دج`;
-  navigator.clipboard.writeText(txt).then(()=>alert('✅ تم نسخ بيانات الطلب — يمكنك لصقها في نموذج DHD'));
-}
-function openOrdersPanel(){
-  const list=JSON.parse(localStorage.getItem('orders')||'[]');
-  if(!list.length){alert('لا توجد طلبات محفوظة بعد');return;}
-  let html='<div style="position:fixed;inset:0;background:rgba(26,10,60,.6);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)this.remove()">'
-    +'<div style="background:#fff;border-radius:16px;max-width:480px;width:100%;max-height:85vh;overflow:auto;padding:18px">'
-    +'<h3 style="margin-bottom:10px;font-family:Tajawal,sans-serif">📋 الطلبات المحفوظة (للإدخال اليدوي في DHD)</h3>';
-  list.forEach((o,i)=>{
-    html+=`<div style="border:1.5px solid #eee;border-radius:10px;padding:10px;margin-bottom:8px;font-family:Tajawal,sans-serif;font-size:13px">
-      <b>${o.n} ${o.p}</b> — ${o.ph}<br>${o.w} / ${o.cm||'—'}<br>${o.ad||''}<br>
-      <small>📦 ${o.total} دج (شامل التوصيل ${o.d} دج)</small><br>
-      <button onclick='copyDHDFormat(${JSON.stringify(o)})' style="margin-top:6px;background:#6C3CE1;color:#fff;border:none;padding:6px 12px;border-radius:8px;font-size:12px;cursor:pointer;font-family:Tajawal,sans-serif">📋 نسخ لإدخاله في DHD</button>
-    </div>`;
-  });
-  html+='<button onclick="this.closest(\'div[style*=fixed]\').remove()" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:none;background:#eee;font-family:Tajawal,sans-serif;cursor:pointer">إغلاق</button></div></div>';
-  const div=document.createElement('div');
-  div.innerHTML=html;
-  document.body.appendChild(div.firstElementChild);
 }
 </script>
 </body>
